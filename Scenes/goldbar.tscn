@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7y0vid27scqx"]
+
+[ext_resource type="Script" uid="uid://71qhqwm637b5" path="res://Scripts/goldbar.gd" id="1_rokn4"]
+[ext_resource type="Texture2D" uid="uid://ust23cop45c2" path="res://Assets/Outdoor decoration/Outdoor_Decor_Free.png" id="2_6jefw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o7ppr"]
+radius = 4.12311
+
+[node name="goldbar" type="Area2D"]
+script = ExtResource("1_rokn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6jefw")
+region_enabled = true
+region_rect = Rect2(32, 97, 16, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o7ppr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
